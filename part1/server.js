@@ -41,5 +41,8 @@ async function initialiseTestData() {
     } catch (err){
         await connection.query('ROLLBACK');
         console.error('Test data initialisation fialed:', err);
+    } finally {
+        connection.release();
     }
-}}
+}
+
