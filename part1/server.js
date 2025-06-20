@@ -85,5 +85,7 @@ app.get('/api/walkrequests/open', async (req, res) => {
         }));
 
         res.json(formatted);
+    } catch (err) {
+        console.errror('GET /api/walkrequests/open error:')
     }
 })
