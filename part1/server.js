@@ -67,6 +67,9 @@ app.get('/api/walkrequests/open', async (req, res) => {
     try {
         const[results] = await pool.query(`
         SELCT
-        wr.request`)
+        wr.request_id,
+        d.name AS dog_name,
+        wr.requested_time,
+        wr.`)
     }
 })
