@@ -38,6 +38,7 @@ async function initialiseTestData() {
 
         await connection.query('COMMIT');
         console.log('Test data initialised successfully');
+    } catch (err){
+        await connection.query('ROLLBACK')
     }
-    
-}
+}}
