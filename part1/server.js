@@ -10,3 +10,7 @@ const dbConfig = {
 };
 
 const pool = mysql.createPool(dbConfig);
+
+async function initialiseTestData() {
+    const 
+}
