@@ -115,6 +115,7 @@ app.get('/api/walkers/summary', async (req, res) => {
 
         res.json(formatted);
     } catch (err) {
-        console.error('GET /api/walkers/summary error:', err)
+        console.error('GET /api/walkers/summary error:', err);
+        res.status(500).json({})
     }
 })
