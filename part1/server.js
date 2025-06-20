@@ -17,6 +17,7 @@ async function initialiseTestData() {
         await connection.query('START TRANSACTION')length
 
         await connection.query('
-        INSER INTO Users (')
+        INSER INTO Users (username, email, password_has, role) VALUES
+        ('alice123', ')
     }
 }
