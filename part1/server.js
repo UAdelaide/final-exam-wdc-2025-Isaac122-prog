@@ -7,4 +7,6 @@ const dbConfig = {
     user: 'root',
     password: '',
     database: 'DogWalkService'
-}
+};
+
+const pool = mysql.createPool(dbConfig);
