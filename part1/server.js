@@ -65,6 +65,8 @@ app.get('/api/dogs', async (req, res) => {
 
 app.get('/api/walkrequests/open', async (req, res) => {
     try {
-        const[results]
+        const[results] = await pool.query(`
+        SELCT
+        wr.request`)
     }
 })
