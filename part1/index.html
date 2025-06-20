@@ -16,12 +16,12 @@
     <script>
         getNewDog(){
         fetch ('https://dog.ceo/api/breeds/image/random/3')
-                .then(response => response.json())
-                .then(data => {
-                    return fetch(data.message);
+            .then(response => response.json())
+            .then(data => {
+                return fetch(data.message);
         })
-
-
+        .then(res => res.blob())
+        
     }
 
     </script>
