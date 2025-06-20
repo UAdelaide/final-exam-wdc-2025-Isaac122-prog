@@ -31,6 +31,7 @@ async function initialiseTestData() {
         `);
 
         await connection.query(`
-        INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) VALUES`)
+        INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) VALUES
+        `)
     }
 }
