@@ -38,6 +38,6 @@ async function initialiseTestData() {
 
         await connection.query('COMMIT');
         console.log('Test data initialised successfully');
-
     }
+    
 }
