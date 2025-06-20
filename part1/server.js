@@ -14,6 +14,9 @@ const pool = mysql.createPool(dbConfig);
 async function initialiseTestData() {
     const connection = await pool.getConnection();
     try {
-        await connection.query('S')
+        await connection.query('START TRANSACTION')length
+
+        await connection.query('
+        INSER INTO Users (')
     }
 }
