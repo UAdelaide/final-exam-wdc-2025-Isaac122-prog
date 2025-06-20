@@ -27,7 +27,9 @@
             img.src = url;
             img.style.width = '90%';
             img.alt = '';
-            const container = document.getElementById('dog-container')
+            const container = document.getElementById('dog-container');
+            container.innerHTML = '';
+            container.appendChild(img);
         })
     }
 
