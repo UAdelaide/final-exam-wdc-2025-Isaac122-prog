@@ -81,7 +81,9 @@ app.get('/api/walkrequests/open', async (req, res) => {
 
         const formatted  = results.map(r => ({
             ...r,
-            requested_time: new Date(r.requested_time).toISO
-        }))
+            requested_time: new Date(r.requested_time).toISOString()
+        }));
+
+        res.json(formatted);
     }
 })
