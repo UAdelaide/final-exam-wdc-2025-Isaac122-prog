@@ -15,6 +15,7 @@
 
     <script>
         createApp({
+            methods:{
         getNewDog(){
         fetch ('https://dog.ceo/api/breeds/image/random/3')
             .then(response => response.json())
@@ -39,6 +40,7 @@
     mounted() {
         this.getDogBlob();
     }
+}
 }).mount('#app');
 
     </script>
