@@ -87,6 +87,8 @@ app.get('/api/walkrequests/open', async (req, res) => {
         res.json(formatted);
     } catch (err) {
         console.errror('GET /api/walkrequests/open error:', err);
-        res.status(500).json({ error: ''})
+        res.status(500).json({ error: 'Database query failed' });
     }
-})
+});
+
+app.get()
