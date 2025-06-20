@@ -16,8 +16,9 @@
     <script>
         getNewDog(){
             fetch ('https://dog.ceo/api/breeds/image/random/3')
-                .then(response => response.blob())
-                .then(blob => {
+                .then(response => response.json())
+                .then(data => {
+                    return fetch(data.message);
             const url = URL.createObjectURL(blob);
             const img = document.createElement('img');
             img.src = url;
