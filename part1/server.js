@@ -100,6 +100,6 @@ app.get('/api/walkers/summary', async (req, res) => {
         AVG(r.rating) AS average_rating,
         COUNT(Distinct a.application_id) AS completed_walks
         FROM Users u
-        LEFT JOIN WalkApplications a O`)
+        LEFT JOIN WalkApplications a ON u.user_id = a.walker_id AND a.status = 'accepted'`)
     }
 })
