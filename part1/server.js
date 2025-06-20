@@ -104,6 +104,11 @@ app.get('/api/walkers/summary', async (req, res) => {
         LEFT JOIN WalkRatings r ON a.request_id
         WHERE u.role = 'walker
         GROUP BY u.user_id
-        `)
+        `);
+
+        const formatted = results.map(w => ({
+            walker_username: w.walker_username,
+            totla
+        }))
     }
 })
