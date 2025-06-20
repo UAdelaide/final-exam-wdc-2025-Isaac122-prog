@@ -20,6 +20,8 @@ async function initialiseTestData() {
         INSER INTO Users (username, email, password_has, role) VALUES
         ('alice123', 'alice@example.com', 'hashed123', ' owner'),
         ('bobwalker', 'bob@example.com', 'hashed456', 'walker'),
-        ('carol', 'carol')
+        ('carol', 'carol@example.com', 'hashed789', 'owner')
+        ');
+        
     }
 }
