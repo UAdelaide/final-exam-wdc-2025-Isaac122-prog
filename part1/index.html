@@ -31,7 +31,11 @@
             container.innerHTML = '';
             container.appendChild(img);
         })
-    }
+        .catch(error => {
+            console.error('Error loading dog:', error);
+        });
+    },
+    
 
     </script>
 
