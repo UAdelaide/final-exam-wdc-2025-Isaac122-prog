@@ -59,6 +59,7 @@ app.get('/api/dogs', async (req, res) => {
         res.json(results);
     } catch (err) {
         console.error('GET /api/dogs error:', err);
-        res.status(500).json({})
+        res.status(500).json({ error: 'Database query failed' });
     }
-})
+});
+
