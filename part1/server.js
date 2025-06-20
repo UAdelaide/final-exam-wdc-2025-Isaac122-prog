@@ -80,7 +80,8 @@ app.get('/api/walkrequests/open', async (req, res) => {
         `);
 
         const formatted  = results.map(r => ({
-            ...r
+            ...r,
+            requested_time: new Date(r.requested_time).toISO
         }))
     }
 })
