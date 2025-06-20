@@ -49,6 +49,9 @@ async function initialiseTestData() {
 app.get('/api/dogs', async (req, res) => {
     try {
         const [results] = await pool.query(`
+        SELECT
+        d.name AS dog_name,
+        
         `)
     }
 })
