@@ -19,7 +19,8 @@
         .then(response => response.blob())
         .then(blob => {
             const url = URL.createObjectURL(blob);
-            const img = 
+            const img = document.createElement('img');
+            img.src = url;
             this.
         })
 
