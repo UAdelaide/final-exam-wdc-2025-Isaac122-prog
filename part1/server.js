@@ -23,6 +23,6 @@ async function initialiseTestData() {
         ('carol', 'carol@example.com', 'hashed789', 'owner')
         `);
 
-        await 
+        await connection.query
     }
 }
