@@ -16,12 +16,12 @@ async function initialiseTestData() {
     try {
         await connection.query('START TRANSACTION')length
 
-        await connection.query('
+        await connection.query(`
         INSER INTO Users (username, email, password_has, role) VALUES
         ('alice123', 'alice@example.com', 'hashed123', ' owner'),
         ('bobwalker', 'bob@example.com', 'hashed456', 'walker'),
         ('carol', 'carol@example.com', 'hashed789', 'owner')
-        ');
-        
+        `);
+
     }
 }
