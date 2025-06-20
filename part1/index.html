@@ -18,7 +18,8 @@
         fetch ('https://dog.ceo/api/breeds/image/random/3')
         .then(response => response.blob())
         .then(blob => {
-            const url = URL.createObjectURL
+            const url = URL.createObjectURL(blob);
+            const img = 
             this.
         })
 
