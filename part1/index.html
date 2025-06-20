@@ -24,7 +24,8 @@
         .then(blob => {
             const url = URL.createObjectURL(blob);
             const img = document.createElement(`img`);
-            
+            img.src = url;
+            img.style.width = '1em'
         })
     }
 
