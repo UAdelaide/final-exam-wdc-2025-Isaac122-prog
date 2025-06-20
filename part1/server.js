@@ -4,5 +4,7 @@ const app = express();
 
 const dbConfig = {
     host:'localhost',
-    user:
+    user: 'root',
+    password: '',
+    database: 'DogWalkService'
 }
