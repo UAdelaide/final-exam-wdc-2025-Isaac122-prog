@@ -120,4 +120,6 @@ app.get('/api/walkers/summary', async (req, res) => {
     }
 });
 
-app.listen(PORT, async () => )
+app.listen(PORT, async () => {
+    console.log(`Server running on http://localhost:$`)
+})
