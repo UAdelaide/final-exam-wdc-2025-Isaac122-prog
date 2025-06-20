@@ -23,6 +23,8 @@ async function initialiseTestData() {
         ('carol', 'carol@example.com', 'hashed789', 'owner')
         `);
 
-        await connection.query
+        await connection.query(`
+        INSERT INTO Dogs (owner_id, name, size) VALUES
+        `)
     }
 }
