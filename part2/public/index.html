@@ -53,7 +53,12 @@
             const res = await fetch('/login', {
               method: 'POST', headers: {'Content-Type: 'application/json},body: JSON.stringify({usernmae, password}
             )};
-            const data = await res.json()
+            const data = await res.json();
+            if (data.success) {
+              window.location.href = data.redirect;
+            } else {
+              alert(data.message |)
+            }
 
           }
         }
