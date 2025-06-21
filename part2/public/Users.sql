@@ -11,10 +11,10 @@ CREATE TABLE Users (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- INSERT INTO Users (user_id, username, email, password_hash, role, created_at) VALUES
--- (1,'ownerJane', 'jane@example.com', 'hashedpassword123', 'owner', '2025-06-06 01:32:58'),
--- (2, 'walkerMike', 'mike@example.com', 'hashedpassword456', 'walker', '2025-06-06 01:32:58'),
--- (3,'ownerBob', 'bob@example.com', 'hashedpassword789', 'owner', '2025-06-06 01:34:32'),
--- (4,'a','a@example.com','a', 'owner','2025-06-06 01:34:32'),
--- (5,'b','a@example.com','b', 'walker','2025-06-06 01:34:32');
+INSERT INTO Users (user_id, username, email, password_hash, role, created_at) VALUES
+(1,'ownerJane', 'jane@example.com', 'hashedpassword123', 'owner', '2025-06-06 01:32:58'),
+(2, 'walkerMike', 'mike@example.com', 'hashedpassword456', 'walker', '2025-06-06 01:32:58'),
+(3,'ownerBob', 'bob@example.com', 'hashedpassword789', 'owner', '2025-06-06 01:34:32'),
+(4,'a','a@example.com','a', 'owner','2025-06-06 01:34:32'),
+(5,'b','a@example.com','b', 'walker','2025-06-06 01:34:32');
 
