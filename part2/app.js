@@ -9,7 +9,10 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, '/public')));
 
 //Login
-app.post('/login', async (req, res))
+app.post('/login', async (req, res) => {
+    const {username, password } = req.body;
+    try
+})
 
 
 
