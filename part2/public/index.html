@@ -57,10 +57,9 @@
             if (data.success) {
               window.location.href = data.redirect;
             } else {
-              alert(data.message |)
+              alert(data.message || 'Login failed');
             }
-
-          }
+          } catch(err){}
         }
       }
     }).mount('#app');
