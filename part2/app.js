@@ -18,7 +18,9 @@ app.post('/login', async (req, res) => {
         );
         await con.end();
 
-        if(rows.length === 0)
+        if(rows.length === 0) {
+            return res.json({success: false, message: 'Invalid/Incorrect'})
+        }
     }
 })
 
