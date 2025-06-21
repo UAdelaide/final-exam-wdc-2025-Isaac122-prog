@@ -12,7 +12,8 @@ app.use(express.static(path.join(__dirname, '/public')));
 app.post('/login', async (req, res) => {
     const {username, password } = req.body;
     try {
-        const con = await mysql.createConnection(db)
+        const con = await mysql.createConnection(dbConfig);
+        const [rows] = aawait this.connect
     }
 })
 
