@@ -21,5 +21,9 @@ module.exports = app;
 
 //logout endpoit
 app.post('/api/auth/logout', (req,res) => {
-    
+    req.session.destroy(err => {
+        if (err) {
+            console.error
+        }
+    })
 })
