@@ -11,4 +11,4 @@ CREATE TABLE Users (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-INSERT INTO user_id Values (1,)
+INSERT INTO Users VALUES (1,)
