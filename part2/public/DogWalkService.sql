@@ -12,8 +12,7 @@ CREATE TABLE Users (
 );
 
 INSERT INTO Users (username, email, password_hash, role) VALUES
-('ownerJane', 'jane@example.com', 'hashedpassword123', 'owner'),
-('walkerMike', 'mike@example.com', 'hashedpassword456', 'walker'),
-('ownerBob', 'bob@example.com', 'hashedpassword789', 'owner'),
+('ownerJane', 'jane@example.com', 'password123', 'owner'),
+('walkerMike', 'mike@example.com', 'password456', 'walker'),
 ('a','a@example.com','a', 'owner'),
 ('b','b@example.com','b', 'walker');
