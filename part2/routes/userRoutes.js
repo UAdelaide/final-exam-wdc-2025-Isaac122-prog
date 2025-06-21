@@ -18,7 +18,7 @@ router.post('/register', async (req, res) => {
 
   try {
     const [result] = await db.query(`
-      INSERT INTO Users (username, email, password_hash, role)
+      INSERT INTO DogWalkService (username, email, password_hash, role)
       VALUES (?, ?, ?, ?)
     `, [username, email, password, role]);
 
@@ -42,7 +42,7 @@ router.post('/login', async (req, res) => {
 
   try {
     const [rows] = await db.query(`
-      SELECT user_id, username, role, password_hash FROM Users WHERE username = ?
+      SELECT user_id, username, role, password_hash FROM DogWalkService WHERE username = ?
     `, [username]);
 
     console.log('Input username:', username);
