@@ -20,3 +20,6 @@ module.exports = app;
 
 
 //logout endpoit
+app.post('/api/auth/logout', (req,res) => {
+    
+})
