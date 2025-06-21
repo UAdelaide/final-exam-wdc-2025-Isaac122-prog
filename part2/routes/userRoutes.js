@@ -5,7 +5,7 @@ const db = require('../models/db');
 // GET all users (for admin/testing)
 router.get('/', async (req, res) => {
   try {
-    const [rows] = await db.query('SELECT user_id, username, email, role FROM DogWalkService');
+    const [rows] = await db.query('SELECT user_id, username, email, role FROM Users');
     res.json(rows);
   } catch (error) {
     res.status(500).json({ error: 'Failed to fetch users' });
@@ -18,7 +18,7 @@ router.post('/register', async (req, res) => {
 
   try {
     const [result] = await db.query(`
-      INSERT INTO DogWalkService (username, email, password_hash, role)
+      INSERT INTO Users (username, email, password_hash, role)
       VALUES (?, ?, ?, ?)
     `, [username, email, password, role]);
 
@@ -42,7 +42,7 @@ router.post('/login', async (req, res) => {
 
   try {
     const [rows] = await db.query(`
-      SELECT user_id, username, role, password_hash FROM DogWalkService WHERE username = ?
+      SELECT user_id, username, role, password_hash FROM Users WHERE username = ?
     `, [username]);
 
     console.log('Input username:', username);
