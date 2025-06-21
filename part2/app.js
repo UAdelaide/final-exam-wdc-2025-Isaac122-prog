@@ -9,13 +9,22 @@ const app = express();
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '/public')));
 
-// Add BEFORE routes
+// Add before routes
 app.use(session({
   secret: 'dogwalksecretkey',
   resave: false,
   saveUninitialized: true,
   cookie: { secure: false }
 }));
+
+const session = require('express-session');
+app.use(session({
+  secret: 'dogwalksecretkey',
+  resave: false,
+  saveUninitialized: false,
+  cookie: { secure: false }
+}));
+
 
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
