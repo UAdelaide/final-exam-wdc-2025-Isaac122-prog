@@ -2,6 +2,14 @@ const express = require('express');
 const path = require('path');
 require('dotenv').config();
 
+const dbConfig = {
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    database: 'Users'
+  };
+
+
 const app = express();
 
 // Middleware
