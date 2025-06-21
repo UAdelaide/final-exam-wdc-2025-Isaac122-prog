@@ -31,7 +31,6 @@ app.post('/api/auth/logout', (req,res) => {
             secure: process.env.NODE_ENV == 'production'
         });
         res.clearCookie('connect.sid', { path: '/'});
-
-
+        res.status(200).json({message:'logged otu successful'});
     })
 })
