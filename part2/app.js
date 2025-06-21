@@ -37,7 +37,8 @@ app.post('/login', async (req, res) => {
             return res.json({success:false, message: 'no role'});
         }
     } catch (err) {
-        console.errror(err)
+        console.errror(err);
+        res.status(500).json({success:false, message})
     }
 })
 
