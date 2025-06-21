@@ -139,7 +139,7 @@
           if (!userId.value) return;
           try {
             // Assuming your API supports filtering walks by owner
-            const res = await fetch(`/api/walks?owner_id=${userId.value}`);
+            const res = await fetch(`/api/walks?owner_id=${userId.value}`, { credentials: 'include'}
             if (!res.ok) throw new Error('Failed to load walk requests');
             walks.value = await res.json();
           } catch (err) {
