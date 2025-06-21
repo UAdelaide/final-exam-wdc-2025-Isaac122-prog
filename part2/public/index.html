@@ -77,35 +77,6 @@
           }
         }
 
-
-
-
-
-        getNewDog(){
-        fetch ('https://dog.ceo/api/breeds/image/random')
-            .then(response => response.json())
-            .then(data => {
-                return fetch(data.message);
-        })
-        .then(res => res.blob())
-        .then(blob => {
-            const url = URL.createObjectURL(blob);
-            const img = document.createElement(`img`);
-            img.src = url;
-            img.style.width = '90%';
-            img.alt = '';
-            const container = document.getElementById('dog-container');
-            container.innerHTML = '';
-            container.appendChild(img);
-        })
-        .catch(error => {
-            console.error('Error loading dog:', error);
-        });
-
-
-
-
-
       },
       mounted() {
         document.getElementById('loginForm').addEventListener('submit', this.loginUser);
