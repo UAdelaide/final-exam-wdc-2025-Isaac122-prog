@@ -22,15 +22,15 @@ const app = express();
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '/public')));
 
-// Add  BEFORE your routes
+// Add BEFORE routes
 app.use(session({
-  secret: 'dogwalksecretkey',   // Use env var in real apps
+  secret: 'dogwalksecretkey',
   resave: false,
   saveUninitialized: true,
-  cookie: { secure: false }     // Set true only with HTTPS
+  cookie: { secure: false }
 }));
 
-// ✅ Set up your API routes
+// Routes
 const walkRoutes = require('./routes/walkRoutes');
 const userRoutes = require('./routes/userRoutes');
 
