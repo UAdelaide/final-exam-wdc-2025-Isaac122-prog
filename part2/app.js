@@ -29,7 +29,9 @@ app.post('/login', async (req, res) => {
             role: user.role
         };
 
-        if (user.role ==== 'owner')
+        if (user.role ==== 'owner') {
+            return res.json({success:true, redirect: 'owner-dashb'})
+        }
     }
 })
 
