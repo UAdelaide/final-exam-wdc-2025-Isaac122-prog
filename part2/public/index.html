@@ -132,7 +132,7 @@
         <th>Owner ID</th>
         <th>Photo</th>
       </tr>
-      <tr for="dog in dogs" :key="dog.dog_id">
+      <tr v-for="dog in dogs" :key="dog.dog_id">
         <td style="width: 150px;">
           <img :src="dog.randomImage" alt="Dog Image" style="max-width: 140px; max-height: 100px; object-fit: cover;">
         </td>
