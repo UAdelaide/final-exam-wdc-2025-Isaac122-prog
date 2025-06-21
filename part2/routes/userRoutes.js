@@ -40,6 +40,7 @@ router.post('/login', async (req, res) => {
   const { username, password } = req.body;
 
   try {
+    // 1. Fetch the user by username
     const [rows] = await db.query(`
       SELECT user_id, username, role, password_hash FROM Users WHERE username = ?
     `, [username]);
@@ -49,6 +50,31 @@ router.post('/login', async (req, res) => {
     }
 
     const user = rows[0];
+
+    // 2. Check if the password matches exactly (dummy check)
+    if (user.password_hash !== password) {
+      return res.status(401).json({ message: 'Invalid username or password' });
+    }
+
+    // 3. Store user info in session
+    req.session.user = {
+      user_id: user.user_id,
+      username: user.username,
+      role: user.role
+    };
+
+    // 4. Return role so frontend can redirect
+    res.json({ success: true, role: user.role });
+
+  } catch (error) {
+    console.error('Login error:', error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+});
+
+
+
+
 
     // Simple plaintext password check
     if (password !== user.password_hash) {
