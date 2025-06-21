@@ -54,6 +54,8 @@
             });
 
             const data = await res.json();
+            console.log("Login status:", res.status);
+            console.log("Login response:", data);
 
             if (res.ok && data.role) {
               // Redirect based on user role
@@ -68,7 +70,7 @@
               alert(data.message || 'Invalid username or password');
             }
           } catch (err) {
-            console.error(err);
+            console.error('Fetch error:', err);
             alert('Server error. Please try again.');
           }
         }
@@ -78,6 +80,7 @@
       }
     }).mount('#app');
   </script>
+
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
