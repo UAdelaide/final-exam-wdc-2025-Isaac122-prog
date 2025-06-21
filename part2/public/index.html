@@ -47,7 +47,11 @@
         async loginUser(event) {
           event.preventDefault();
           const username = document.getElementById('username').value;
-          const password = document.getElementById('password')
+          const password = document.getElementById('password').value;
+
+          try {
+            const res = await fetch('/login', {method: 'POST', headers: {}})
+          }
         }
       }
     }).mount('#app');
