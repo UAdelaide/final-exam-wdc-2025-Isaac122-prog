@@ -30,8 +30,6 @@
     </form>
   </div>
 
-  <div id="dog-container"></div>
-
   <script>
     const { createApp } = Vue;
     createApp({
@@ -76,7 +74,6 @@
             alert('Server error. Please try again.');
           }
         }
-
       },
       mounted() {
         document.getElementById('loginForm').addEventListener('submit', this.loginUser);
