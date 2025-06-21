@@ -145,7 +145,7 @@
         }
 
         function logout() {
-  location.replace("https://www.w3schools.com")
+  location.replace('index.html')
 }
 
 async function logout(){
@@ -156,7 +156,7 @@ async function logout(){
 
     if (response.ok) {
       // ✅ Redirect to login page
-      window.location.href = '/login.html';
+      window.location.href = '/index.html';
     } else {
       throw new Error('Logout failed');
     }
