@@ -27,9 +27,11 @@ app.post('/api/auth/logout', (req,res) => {
         }
         res.clearCookie('connect.sid', {
             path:'/',
-            httpOnly: true;
+            httpOnly: true,
             secure: process.env.NODE_ENV == 'production'
         });
-        res.clearCookie('connect.sid', {})
+        res.clearCookie('connect.sid', { path: '/'});
+
+
     })
 })
