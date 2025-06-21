@@ -8,10 +8,10 @@ CREATE TABLE Dogs (
 
 
 INSERT INTO Users (dog_id, owner_id, name, size) VALUES
-('1', 'jane, 'password123', 'owner'),
-('2', 'mike@example.com', 'password456', 'walker'),
-('3','max@example.com','password789', 'owner'),
-('4','thomas@example.com','password234', 'walker');
+('1', '1', 'password123', 'owner'),
+('2', '1', 'password456', 'walker'),
+('3','2','password789', 'owner'),
+('4','2','Emma', 'walker');
 
 
 -- +--------+----------+-------+--------+---------------------+
