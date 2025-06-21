@@ -69,7 +69,7 @@ router.post('/login', async (req, res) => {
 });
 
 
-// POST /api/users/logout
+// POST logout
 router.post('/logout', (req, res) => {
   // Destroy the session
   req.session.destroy(err => {
@@ -83,6 +83,22 @@ router.post('/logout', (req, res) => {
 
     res.json({ message: 'Logout successful' });
   });
+});
+
+// GET dogs
+router.get('/:userId/dogs', async (req, res) => {
+  const userId = req.params.userId;
+
+  try {
+    const [dogs] = await db.query(`
+      SELECT dog_id, name, size FROM Dogs WHERE owner_id = ?
+    `, [userId]);
+
+    res.json(dogs);
+  } catch (err) {
+    console.error('Error fetching dogs:', err);
+    res.status(500).json({ error: 'Failed to fetch dogs' });
+  }
 });
 
 
