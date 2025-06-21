@@ -14,8 +14,8 @@ app.post('/login', async (req, res) => {
     try {
         const con = await mysql.createConnection(dbConfig);
         const [rows] = await con.execute(
-            'SELECT * FROM Users WHE'
-        )
+            'SELECT * FROM Users WHERE username = ? AND password_hash = ?', [username, password]
+        );
     }
 })
 
