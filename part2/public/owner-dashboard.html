@@ -193,12 +193,11 @@
         }
 
         onMounted(async () => {
-  await loadCurrentUser();  // get user session info first
-  if (!userId.value) return; // stop if no user
-
-  await loadDogs();  // now load dogs for the logged-in owner
-  await loadWalks(); // then load walks, which depend on userId
-});
+          await loadCurrentUser();  // get user session info first
+          if (!userId.value) return; // stop if no user
+          await loadDogs();  // now load dogs for the logged-in owner
+          await loadWalks(); // then load walks, which depend on userId
+        });
 
 
         return {
