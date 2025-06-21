@@ -28,6 +28,7 @@ router.post('/register', async (req, res) => {
   }
 });
 
+// Get current session user
 router.get('/me', (req, res) => {
   if (!req.session.user) {
     return res.status(401).json({ error: 'Not logged in' });
@@ -40,60 +41,30 @@ router.post('/login', async (req, res) => {
   const { username, password } = req.body;
 
   try {
-    // 1. Fetch the user by username
     const [rows] = await db.query(`
       SELECT user_id, username, role, password_hash FROM Users WHERE username = ?
     `, [username]);
 
-    if (rows.length === 0) {
+    if (rows.length === 0 || rows[0].password_hash !== password) {
       return res.status(401).json({ message: 'Invalid username or password' });
     }
 
     const user = rows[0];
 
-    // 2. Check if the password matches exactly
-    if (user.password_hash !== password) {
-      return res.status(401).json({ message: 'Invalid username or password' });
-    }
-
-    // 3. Store user info in session
     req.session.user = {
       user_id: user.user_id,
       username: user.username,
       role: user.role
     };
 
-    // 4. Return role so frontend can redirect
-    res.json({ success: true, role: user.role });
-
+    res.json({ message: 'Login successful', role: user.role });
   } catch (error) {
     console.error('Login error:', error);
     res.status(500).json({ message: 'Internal server error' });
   }
 });
 
-
-
-    // Simple plaintext password check
-    if (password !== user.password_hash) {
-      return res.status(401).json({ message: 'Invalid username or password' });
-    }
-
-    // Save user info in session
-    req.session.user = {
-      id: user.user_id,
-      username: user.username,
-      role: user.role
-    };
-
-    res.json({ message: 'Login successful', role: user.role });
-
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Login failed' });
-  }
-});
-
+// POST logout
 router.post('/logout', (req, res) => {
   req.session.destroy(err => {
     if (err) {
@@ -104,7 +75,4 @@ router.post('/logout', (req, res) => {
   });
 });
 
-
-
 module.exports = router;
-
