@@ -170,11 +170,16 @@ section {
     gap: 1.5rem;
 }
 
-.username {
+.username label {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: bold;
 }
 
-.password {
+.password label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
 }
+
+.username
