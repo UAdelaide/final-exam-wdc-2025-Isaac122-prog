@@ -59,7 +59,10 @@
             } else {
               alert(data.message || 'Login failed');
             }
-          } catch(err){}
+          } catch(err){
+            console.error(err);
+            alert('Server error. Try again later.');
+          }
         }
       }
     }).mount('#app');
