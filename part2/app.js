@@ -30,6 +30,6 @@ app.post('/api/auth/logout', (req,res) => {
             httpOnly: true;
             secure: process.env.NODE_ENV == 'production'
         });
-        
+        res.clearCookie('connect.sid', {})
     })
 })
