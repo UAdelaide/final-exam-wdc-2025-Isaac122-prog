@@ -10,3 +10,5 @@ CREATE TABLE Users (
     role ENUM('owner', 'walker') NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+INSERT INTO user_id
