@@ -23,7 +23,10 @@ app.post('/login', async (req, res) => {
         }
 
         const user = rows[0];
-        req.sessiom
+        req.session.user = {
+            id: user.user_id,
+            username: user
+        }
     }
 })
 
