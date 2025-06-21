@@ -19,4 +19,4 @@ app.use('/api/users', userRoutes);
 module.exports = app;
 
 
-//logout
+//logout endpoit
