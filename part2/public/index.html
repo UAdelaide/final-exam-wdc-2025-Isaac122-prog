@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -81,6 +81,151 @@
     }).mount('#app');
   </script>
 
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> -->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dog Walking Service</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body class="bg-light">
+
+  <div id="app" class="container py-5">
+    <header>
+      <h1>dog of the day</h1>
+    </header>
+
+    <button @click="getNewDog">New Dog</button>
+    <div id="dog-container"></div>
+
+    <h1 class="mb-4 text-primary text-center">{{ message }}</h1>
+    <p class="lead text-center">Connect with trusted walkers for your beloved dog!</p>
+
+    <form id="loginForm" class="login-form mb-5">
+      <div class="mb-3 text-center">
+        <h3>Username</h3>
+        <input type="text" id="username" class="form-control w-50 mx-auto" required>
+      </div>
+
+      <div class="mb-3 text-center">
+        <h3>Password</h3>
+        <input type="password" id="password" class="form-control w-50 mx-auto" required>
+      </div>
+
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary">Log In</button>
+      </div>
+    </form>
+
+    <!-- DOGS TABLE -->
+    <h2 class="mb-3 text-center">All Dogs in the Database</h2>
+    <table class="table table-striped table-bordered">
+      <tr class="table-primary">
+        <th>Photo</th>
+        <th>Name</th>
+        <th>Size</th>
+        <th>Owner</th>
+      </tr>
+      <tr v-for="dog in dogs" :key="dog.dog_id">
+        <td style="width: 150px;">
+          <img :src="dog.randomImage" alt="Dog Image" style="max-width: 140px; max-height: 100px; object-fit: cover;">
+        </td>
+        <td>{{ dog.name }}</td>
+        <td>{{ dog.size }}</td>
+        <td>{{ dog.owner_username }}</td>
+      </tr>
+    </table>
+  </div>
+
+  <script>
+    const { createApp } = Vue;
+    createApp({
+      data() {
+        return {
+          message: 'Welcome to the Dog Walking Service!',
+          dogs: []
+        };
+      },
+      methods: {
+        async loginUser(event) {
+          event.preventDefault();
+          const username = document.getElementById('username').value;
+          const password = document.getElementById('password').value;
+
+          try {
+            const res = await fetch('/api/users/login', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({ username, password })
+            });
+
+            const data = await res.json();
+            console.log("Login status:", res.status);
+            console.log("Login response:", data);
+
+            if (res.ok && data.role) {
+              if (data.role === 'owner') {
+                window.location.href = 'owner-dashboard.html';
+              } else if (data.role === 'walker') {
+                window.location.href = 'walker-dashboard.html';
+              } else {
+                alert('Unknown role.');
+              }
+            } else {
+              alert(data.message || 'Invalid username or password');
+            }
+          } catch (err) {
+            console.error('Fetch error:', err);
+            alert('Server error. Please try again.');
+          }
+        },
+
+        async loadDogs() {
+          try {
+            const res = await fetch('/api/dogs');
+            if (!res.ok) throw new Error('Failed to load dogs');
+            const dogsData = await res.json();
+
+            const dogsWithImages = await Promise.all(dogsData.map(async dog => {
+              try {
+                const imgRes = await fetch('https://dog.ceo/api/breeds/image/random');
+                const imgJson = await imgRes.json();
+                return {
+                  ...dog,
+                  randomImage: imgJson.message
+                };
+              } catch {
+                return {
+                  ...dog,
+                  randomImage: ''
+                };
+              }
+            }));
+
+            this.dogs = dogsWithImages;
+          } catch (err) {
+            console.error('Error loading dogs:', err);
+          }
+        }
+      },
+      mounted() {
+        document.getElementById('loginForm').addEventListener('submit', this.loginUser);
+        this.loadDogs();
+      }
+    }).mount('#app');
+  </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
