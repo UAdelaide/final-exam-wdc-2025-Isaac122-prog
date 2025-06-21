@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS Users;
-CREATE DATABASE Users;
-USE Users;
+DROP DATABASE IF EXISTS DogWalkService;
+CREATE DATABASE DogWalkService;
+USE DogWalkService;
 
 CREATE TABLE Users (
     user_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -11,10 +11,9 @@ CREATE TABLE Users (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-INSERT INTO Users (user_id, username, email, password_hash, role, created_at) VALUES
-(1,'ownerJane', 'jane@example.com', 'hashedpassword123', 'owner', '2025-06-06 01:32:58'),
-(2, 'walkerMike', 'mike@example.com', 'hashedpassword456', 'walker', '2025-06-06 01:32:58'),
-(3,'ownerBob', 'bob@example.com', 'hashedpassword789', 'owner', '2025-06-06 01:34:32'),
-(4,'a','a@example.com','a', 'owner','2025-06-06 01:34:32'),
-(5,'b','a@example.com','b', 'walker','2025-06-06 01:34:32');
-
+INSERT INTO Users (username, email, password_hash, role) VALUES
+('ownerJane', 'jane@example.com', 'hashedpassword123', 'owner'),
+('walkerMike', 'mike@example.com', 'hashedpassword456', 'walker'),
+('ownerBob', 'bob@example.com', 'hashedpassword789', 'owner'),
+('a','a@example.com','a', 'owner'),
+('b','b@example.com','b', 'walker');
