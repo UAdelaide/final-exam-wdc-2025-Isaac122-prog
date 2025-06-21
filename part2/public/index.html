@@ -200,7 +200,7 @@
             if (!res.ok) throw new Error('Failed to load dogs');
             const data = await res.json();
 
-            // Fetch random dog photo for each dog
+            // Dog photo fetching
             for (const dog of data) {
               try {
                 const imgRes = await fetch('https://dog.ceo/api/breeds/image/random');
@@ -223,7 +223,7 @@
       },
       mounted() {
         document.getElementById('loginForm').addEventListener('submit', this.loginUser);
-        this.loadDogs(); // Load dogs on page load
+        this.loadDogs();
       }
     }).mount('#app');
   </script>
