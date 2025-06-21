@@ -20,13 +20,13 @@
 
 
 const express = require('express');
-const session = require('express-session'); // ✅ Required for session management
+const session = require('express-session');
 const path = require('path');
 require('dotenv').config();
 
 const app = express();
 
-// ✅ Middleware for parsing JSON and serving static files
+//Middleware
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '/public')));
 
