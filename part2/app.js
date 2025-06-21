@@ -1,16 +1,3 @@
-
-
-// // Routes
-// const walkRoutes = require('./routes/walkRoutes');
-// const userRoutes = require('./routes/userRoutes');
-
-// app.use('/api/walks', walkRoutes);
-// app.use('/api/users', userRoutes);
-
-// // Export the app instead of listening here
-// module.exports = app;
-
-
 const express = require('express');
 const session = require('express-session');
 const path = require('path');
@@ -37,5 +24,5 @@ const userRoutes = require('./routes/userRoutes');
 app.use('/api/walks', walkRoutes);
 app.use('/api/users', userRoutes);
 
-// ✅ Export the app for use with start.js or testing
+// Export the app instead of listening here
 module.exports = app;
