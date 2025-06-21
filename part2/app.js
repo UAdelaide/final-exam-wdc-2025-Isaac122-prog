@@ -17,7 +17,6 @@ app.use(session({
   cookie: { secure: false }
 }));
 
-const session = require('express-session');
 app.use(session({
   secret: 'dogwalksecretkey',
   resave: false,
