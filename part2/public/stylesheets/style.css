@@ -21,6 +21,7 @@ header {
 
 header button {
     float: right;
+    text-align: center;
 }
 
 header .logo {
