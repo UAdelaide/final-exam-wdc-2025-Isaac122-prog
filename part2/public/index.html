@@ -24,7 +24,7 @@
             <h3 style="text-align: center;">Password</h3>
             <input type = "password" id ="password" class="form" required>
           </div>
-          <div style="text-align: center;">
+          <div class = "center" style="text-align: center;">
             <button type="submit" class="button">Log In</button>
           </div>
         </form>
@@ -40,24 +40,8 @@
     createApp({
       data() {
         return {
-          message: 'Welcome to the Dog Walking Service!',
-          error: ''
+          message: 'Welcome to the Dog Walking Service!'
         };
-      },
-      methods: {
-        async loginUser(e) {
-          e.preventDefault();
-          const username = document.getElementById('username').value;
-          const password = docuemtn.getElementById('password').value;
-
-          try {
-            const res = await fetch('/login', {
-              method: 'POST',
-              headers: {'Content-Type': 'application/json' },
-              body: JSON.stringify({username.})
-            })
-          }
-        }
       }
     }).mount('#app');
   </script>
