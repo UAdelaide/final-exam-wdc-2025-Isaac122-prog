@@ -50,10 +50,19 @@ app.post('/login', async (req, res) => {
     }
 });
 
+// Logout
+app.post('/logout', (req, res) => {
+    req.session.destroy(err => {
+      if (err) {
+        console.error('Logout error:', err);
+        return res.status(500).json({ success: false, message: 'Failed to logout' });
+      }
 
-
-
-
+      // Clear the session cookie
+      res.clearCookie('connect.sid');
+      res.json({ success: true });
+    });
+  });
 
 
 // Routes
