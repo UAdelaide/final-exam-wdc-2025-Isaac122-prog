@@ -130,7 +130,7 @@
       </tbody>
     </table>
 
-    <!-- Login Form (unchanged) -->
+    <!-- Login Form -->
     <form id="loginForm" class="login-form">
       <div class="mb-3 text-center">
         <h3>Username</h3>
@@ -200,7 +200,7 @@
             if (!res.ok) throw new Error('Failed to load dogs');
             const data = await res.json();
 
-            // Dog photo fetching
+            // Fetch for dog photoes
             for (const dog of data) {
               try {
                 const imgRes = await fetch('https://dog.ceo/api/breeds/image/random');
