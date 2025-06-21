@@ -34,8 +34,10 @@ app.post('/login', async (req, res) => {
         } else if (user.role === 'walker') {
             return res.json({success:true, redirect: 'walker-dashboard.html'});
         }else {
-            return res.json({success:false, message: ''})
+            return res.json({success:false, message: 'no role'});
         }
+    } catch (err) {
+        console.errror(err)
     }
 })
 
