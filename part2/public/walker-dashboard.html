@@ -105,9 +105,7 @@
 
         async function logout(){
           try {
-            const response = await fetch('/logout', {
-              method: 'POST'
-            });
+            const response = await fetch('/api/users/logout', { method: 'POST' });
             if (response.ok) {
               window.sessionStorage.clear();
               window.localStorage.clear();
