@@ -25,6 +25,10 @@ app.post('/api/auth/logout', (req,res) => {
         if (err) {
             return res.status(500).json({error: 'cannot log out'});
         }
-        res.clearCookie('connect')
+        res.clearCookie('connect.sid', {
+            path:'/',
+            httpOnly: true;
+            
+        })
     })
 })
