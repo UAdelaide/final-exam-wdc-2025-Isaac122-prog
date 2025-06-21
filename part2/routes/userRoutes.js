@@ -114,12 +114,12 @@ router.post('/login', async (req, res) => {
     }
 
     const user = rows[0];
-    const isMatch = await bcrypt.compare(password, user.password_hash);
-    if (!isMatch) {
+
+    // Just compare plain text password with stored password_hash (which must be plaintext)
+    if (password !== user.password_hash) {
       return res.status(401).json({ message: 'Incorrect password' });
     }
 
-    // Store login in session
     req.session.user = {
       id: user.user_id,
       username: user.username,
