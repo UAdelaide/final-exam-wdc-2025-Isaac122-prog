@@ -46,7 +46,8 @@
       methods: {
         async loginUser(event) {
           event.preventDefault();
-          const username = document.getElementById('username')
+          const username = document.getElementById('username').value;
+          const password = document.getElementById('password')
         }
       }
     }).mount('#app');
