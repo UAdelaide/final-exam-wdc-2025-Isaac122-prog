@@ -28,7 +28,8 @@ app.post('/api/auth/logout', (req,res) => {
         res.clearCookie('connect.sid', {
             path:'/',
             httpOnly: true;
-            
-        })
+            secure: process.env.NODE_ENV == 'production'
+        });
+        
     })
 })
