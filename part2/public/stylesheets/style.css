@@ -160,6 +160,7 @@ section {
 
 .login {
     background: white;
-    padding 2em;
-    
+    border-radius: 8px;
+    padding: 2rem;
+
 }
