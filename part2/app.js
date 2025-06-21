@@ -30,8 +30,8 @@ app.post('/login', async (req, res) => {
         };
 
         if (user.role ==== 'owner') {
-            return res.json({success:true, redirect: 'owner-dashb'})
-        }
+            return res.json({success:true, redirect: 'owner-dashboard.html'});
+        } else if (user.role === 'waler')
     }
 })
 
