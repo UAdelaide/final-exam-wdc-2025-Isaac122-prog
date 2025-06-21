@@ -155,7 +155,8 @@
               throw new Error('Logout Failed');
             }
           }catch (err) {
-            error.value = 'Failed to logout.'
+            error.value = 'Failed to logout. Please try again.';
+            console.error(err);
           }
         }
 
