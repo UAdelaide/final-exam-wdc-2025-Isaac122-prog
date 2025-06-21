@@ -188,3 +188,10 @@ section {
     border-radius: 4px;
     font-size: 1rem;
 }
+
+.password label {
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: 4px;
+    font-size: 1rem;
+}
