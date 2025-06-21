@@ -17,9 +17,4 @@ CREATE TABLE Users (
 -- (3,'ownerBob', 'bob@example.com', 'hashedpassword789', 'owner', '2025-06-06 01:34:32'),
 -- (4,'a','a@example.com','a', 'owner','2025-06-06 01:34:32'),
 -- (5,'b','a@example.com','b', 'walker','2025-06-06 01:34:32');
-INSERT INTO Users (user_id, username, email, password_hash, role, created_at) VALUES
-(1, 'ownerJane', 'jane@example.com', '$2b$10$uMHcK7PaRhU8GjV5rHqJmOaH3N/8yW53R7wrW40ZG08o8Zn2VJXjq', 'owner', '2025-06-06 01:32:58'),
-(2, 'walkerMike', 'mike@example.com', '$2b$10$RzO5hbP7/KvAqjbf1UvQSe6U7M43D2L74nnTw9eL6Rw9jL4Va7xXa', 'walker', '2025-06-06 01:32:58'),
-(3, 'ownerBob', 'bob@example.com', '$2b$10$TXzHZ0sp3yUuZqOwGjDfPu/XOTkQzAzDNXXzvTQp7lzZce1tRlWJO', 'owner', '2025-06-06 01:34:32'),
-(4, 'a', 'a@example.com', '$2b$10$5xnP3EdehUSypzXz7HxGsOmSZ8AK0cgZexA.5YkAXMh1qPQvXkK3a', 'owner', '2025-06-06 01:34:32'),
-(5, 'b', 'a@example.com', '$2b$10$8b6pe0XCAc6WmYJpfV.hHu5E5TxULiG8A1qpHdXO9rkkcg.JcSL42', 'walker', '2025-06-06 01:34:32');
+
