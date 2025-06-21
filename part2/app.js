@@ -23,7 +23,8 @@ module.exports = app;
 app.post('/api/auth/logout', (req,res) => {
     req.session.destroy(err => {
         if (err) {
-            console.error
+            console.error('Session destroyed error:', err);
+            
         }
     })
 })
