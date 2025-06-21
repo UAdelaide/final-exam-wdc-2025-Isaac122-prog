@@ -24,7 +24,7 @@ app.post('/api/auth/logout', (req,res) => {
     req.session.destroy(err => {
         if (err) {
             console.error('Session destroyed error:', err);
-            
+            return res.status(500).json({error: 'cannot log out'});
         }
     })
 })
