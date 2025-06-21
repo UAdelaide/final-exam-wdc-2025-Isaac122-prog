@@ -193,11 +193,13 @@
         onMounted(async () => {
           await loadCurrentUser();
           await loadWalks();
+          await loadDogs();
         });
 
         return {
           form,
           walks,
+          dogs,
           message,
           error,
           submitWalkRequest,
