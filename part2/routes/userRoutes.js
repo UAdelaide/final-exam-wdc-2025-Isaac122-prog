@@ -51,7 +51,7 @@ router.post('/login', async (req, res) => {
 
     const user = rows[0];
 
-    // 2. Check if the password matches exactly (dummy check)
+    // 2. Check if the password matches exactly
     if (user.password_hash !== password) {
       return res.status(401).json({ message: 'Invalid username or password' });
     }
@@ -71,8 +71,6 @@ router.post('/login', async (req, res) => {
     res.status(500).json({ message: 'Internal server error' });
   }
 });
-
-
 
 
 
