@@ -14,5 +14,14 @@ CREATE TABLE Users (
 INSERT INTO Users (username, email, password_hash, role) VALUES
 ('ownerJane', 'jane@example.com', 'password123', 'owner'),
 ('walkerMike', 'mike@example.com', 'password456', 'walker'),
-('a','a@example.com','a', 'owner'),
+('max','max@example.com','a', 'owner'),
 ('b','b@example.com','b', 'walker');
+
+-- ---------+--------------+--------------------+---------------+--------+---------------------+
+-- | user_id | username     | email              | password_hash | role   | created_at          |
+-- +---------+--------------+--------------------+---------------+--------+---------------------+
+-- |       1 | ownerJane    | jane@example.com   | password123   | owner  | 2025-06-21 05:28:57 |
+-- |       2 | walkerMike   | mike@example.com   | password456   | walker | 2025-06-21 05:28:57 |
+-- |       3 | ownerMax     | max@example.com    | password789   | owner  | 2025-06-21 05:49:34 |
+-- |       4 | walkerThomas | thomas@example.com | password234   | walker | 2025-06-21 05:49:34 |
+-- +---------+--------------+--------------------+---------------+--------+--------------------
