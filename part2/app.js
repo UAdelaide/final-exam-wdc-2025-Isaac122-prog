@@ -38,7 +38,7 @@ app.post('/login', async (req, res) => {
         }
     } catch (err) {
         console.errror(err);
-        res.status(500).json({success:false, message})
+        res.status(500).json({success:false, message: 'Server error'});
     }
 })
 
