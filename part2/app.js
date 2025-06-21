@@ -18,7 +18,8 @@ app.use('/api/users', userRoutes);
 
 
 
-function initialise_db (){
+function initialise_db(){
+
 }
 
 // Export the app instead of listening here
