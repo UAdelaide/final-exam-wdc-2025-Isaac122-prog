@@ -45,6 +45,10 @@ router.post('/login', async (req, res) => {
       SELECT user_id, username, role, password_hash FROM Users WHERE username = ?
     `, [username]);
 
+    console.log('Input username:', username);
+    console.log('DB rows:', rows);
+
+
     if (rows.length === 0 || rows[0].password_hash !== password) {
       return res.status(401).json({ message: 'Invalid username or password' });
     }
