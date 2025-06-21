@@ -19,8 +19,11 @@ app.post('/login', async (req, res) => {
         await con.end();
 
         if(rows.length === 0) {
-            return res.json({success: false, message: 'Invalid/Incorrect'})
+            return res.json({success: false, message: 'Invalid/Incorrect credentials'});
         }
+
+        const user = rows[0];
+        req.sessiom
     }
 })
 
