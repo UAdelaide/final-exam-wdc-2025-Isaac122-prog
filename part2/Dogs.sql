@@ -3,6 +3,5 @@ CREATE TABLE Dogs (
   owner_id INT NOT NULL,
   name VARCHAR(100),
   size VARCHAR(50),
-  -- other dog fields
   FOREIGN KEY (owner_id) REFERENCES Users(user_id)
 );
