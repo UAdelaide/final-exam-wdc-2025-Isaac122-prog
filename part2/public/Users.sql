@@ -11,4 +11,4 @@ CREATE TABLE Users (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-INSERT INTO Users VALUES (1,'ownerJane', 'jane@example.com', 'hashedpassword123')
+INSERT INTO Users VALUES (1,'ownerJane', 'jane@example.com', 'hashedpassword123', 'owner', '')
