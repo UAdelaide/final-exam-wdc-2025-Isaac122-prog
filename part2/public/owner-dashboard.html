@@ -152,8 +152,10 @@
             if (response.ok) {
               window.location.href = '/index.html';
             } else {
-              throw new Error
+              throw new Error('Logout Failed');
             }
+          }catch (err) {
+            
           }
         }
 
