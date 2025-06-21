@@ -42,6 +42,11 @@
         return {
           message: 'Welcome to the Dog Walking Service!'
         };
+      },
+      methods: {
+        async loginUser(event) {
+          event.preventDefault()
+        }
       }
     }).mount('#app');
   </script>
