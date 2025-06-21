@@ -53,6 +53,7 @@
             const res = await fetch('/login', {
               method: 'POST', headers: {'Content-Type: 'application/json},body: JSON.stringify({usernmae, password}
             )};
+            const data = await res.json()
 
           }
         }
